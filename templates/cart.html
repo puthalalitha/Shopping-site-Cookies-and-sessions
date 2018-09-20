@@ -5,12 +5,12 @@
 
     <table class="table table-striped">
         <thead>
-        <!-- <tr>
+        <tr>
             <th>Melon Name</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Total</th>
-        </tr> -->
+        </tr>
         </thead>
         <tbody>
         <!-- <tr>
@@ -37,20 +37,22 @@
             <td>$3.00</td>
             <td>$6.00</td>
         </tr> -->
-        {% for melon in session["cart"] %}
+        {% for melon in melon_cart %}
+
         <tr>
-            <td>{{melon}}</td>
-            <td>quantity</td>
-            <td>{{price}}</td>
-            <td>{{total}}</td>
+            <td>{{melon.common_name}}</td>
+            <td>{{melon.quantity}}</td>
+            <td>{{melon.price}}</td>
+            <td>{{melon.total}}</td>
         </tr>
+
 
         {%endfor%}
        
         </tbody>
     </table>
 
-    <h3>Total: $27.00</h3>
+    <h3>Total: {{total_cost}}</h3>
 
     <a href="/checkout" class="btn btn-large btn-primary">Check Out</a>
 
